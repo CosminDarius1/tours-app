@@ -1,7 +1,8 @@
-import react from "@vitejs/plugin-react";
 
 const Loading = () => {
+return <div className="loading">
 
+</div>
 }
 
 export default Loading

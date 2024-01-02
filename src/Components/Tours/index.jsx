@@ -1,8 +1,6 @@
 
-import react from "@vitejs/plugin-react";
-
-const Tours = () => {
-
+const Tours = ({tours}) => {
+return <></>
 }
 
 export default Tours;
