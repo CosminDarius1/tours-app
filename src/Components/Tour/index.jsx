@@ -1,5 +1,5 @@
 
-const Tour = ({tours}) => {
+const Tour = ({tours,id,image,info,name,price}) => {
     return <>
             <ul className='tours'>
                 {tours.map((tour) => {

@@ -5,23 +5,34 @@ import Loading from "./Components/Loading/index.jsx";
 const url = 'https://course-api.com/react-tours-project';
 
 const App = () => {
+  const [isLoading, setisLoading] = useState(true)
   const[tours, setTours] = useState([])
+
+  const fetchTours = async () => {
+    setisLoading(true)
+    try {
+      const response = await fetch(url)
+      const tours = await response.json()
+      setTours(tours)
+    } catch (err) {
+      console.log(err)
+    }
+    setisLoading(false)
+  }
+
+
   useEffect(() => {
-    const getTours = async () => {
-      try {
-        const response = await fetch(url)
-        const tours = await response.json()
-        setTours(tours)
-      } catch (err) {
-        console.log(err)
-      }
-    };
-    getTours()
+    fetchTours()
   },[])
+
+  if(isLoading) {
+    return <main>
+    <Loading/>
+    </main>
+  }
 
   return <main className="main">
   <h2>Our tours</h2>
-    <Loading/>
     <section>
       {tours.map((tour) => {
         const {id, name, info, image, price} = tour
