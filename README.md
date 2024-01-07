@@ -1,4 +1,4 @@
-In this Tour project I managed to:
+In this Tours project I managed to:<br>
 <br>-Fetch the tours data in App compenent;<br>
 <br>-Create 3 component Tour, Tours and Loading and their particular functionality;<br>
 <br>-Added a Remove button for each component, so when the 'remove button' its clicked, the Tours component updates its state to remove the tour from tours array;<br>
