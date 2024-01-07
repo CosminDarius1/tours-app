@@ -31,6 +31,7 @@ const App = () => {
     fetchTours()
   },[])
 
+
   if(isLoading) {
     return <main>
     <Loading/>
